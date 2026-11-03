@@ -22,6 +22,95 @@ button{background:#087f68;color:white;border:0;padding:13px 22px;border-radius:6
 footer{text-align:center;padding:25px;background:#075e50;color:white}
 </style>
 </head>
+  
+<style>
+#monkeyGuideButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    border: none;
+    border-radius: 50px;
+    padding: 13px 18px;
+    background: #087f68;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px #0003;
+}
+#monkeyGuideBox {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    z-index: 9999;
+    width: 280px;
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px #0003;
+    line-height: 1.6;
+}
+#monkeyGuideBox button {
+    background: #087f68;
+    color: white;
+    border: none;
+    padding: 9px 13px;
+    margin: 5px 4px 0 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+</style>
+
+<button id="monkeyGuideButton" onclick="toggleMonkeyGuide()">
+    🐵 Monkey Guide
+</button>
+
+<div id="monkeyGuideBox">
+    <h3>🐵 नमस्ते दोस्त!</h3>
+    <p>
+        क्या आपने किसी नदी, नाले या तालाब में प्रदूषण
+        देखा है? इस पेज पर आप उसका स्थान, प्रदूषण का
+        प्रकार और अपना अनुभव बता सकते हैं। फोटो लेना
+        वैकल्पिक है। कृपया सुरक्षित दूरी से ही जानकारी
+        दें और गंदे पानी को न छुएँ। अभी यह Demo Form है,
+        आपकी रिपोर्ट या फोटो सेव नहीं होगी।
+    </p>
+    <button onclick="speakMonkeyGuide()">🔊 मुझे सुनाओ</button>
+    <button onclick="stopMonkeyGuide()">रोकें</button>
+    <button onclick="toggleMonkeyGuide()">बंद करें</button>
+</div>
+
+<script>
+function toggleMonkeyGuide() {
+    const box = document.getElementById("monkeyGuideBox");
+    box.style.display =
+        box.style.display === "block" ? "none" : "block";
+}
+
+function speakMonkeyGuide() {
+    if (!("speechSynthesis" in window)) {
+        alert("आपका Browser आवाज़ चलाने की सुविधा नहीं देता।");
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const message =
+        "नमस्ते दोस्त! क्या आपने किसी नदी, नाले या तालाब में प्रदूषण देखा है? इस पेज पर आप उसका स्थान, प्रदूषण का प्रकार और अपना अनुभव बता सकते हैं। फोटो लेना वैकल्पिक है। कृपया सुरक्षित दूरी से ही जानकारी दें और गंदे पानी को न छुएँ। अभी यह डेमो फॉर्म है, आपकी रिपोर्ट या फोटो सेव नहीं होगी।";
+
+    const speech = new SpeechSynthesisUtterance(message);
+    speech.lang = "hi-IN";
+    speech.rate = 0.9;
+
+    window.speechSynthesis.speak(speech);
+}
+
+function stopMonkeyGuide() {
+    window.speechSynthesis.cancel();
+}
+</script>
+
 <body>
 
 <header>
