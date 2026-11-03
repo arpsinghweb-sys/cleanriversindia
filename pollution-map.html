@@ -1,1 +1,168 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Pollution Map | Clean Rivers India</title>
+<style>
+* { box-sizing:border-box; }
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f2f8f6;
+    color:#173b38;
+}
+header {
+    background:#075e54;
+    color:white;
+    padding:20px 7%;
+}
+header a { color:white; text-decoration:none; }
+main { padding:35px 7%; }
+h1,h2 { color:#087e72; }
+.intro {
+    background:#dff1eb;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+}
+.filters {
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+select,input {
+    padding:12px;
+    border:1px solid #bbb;
+    border-radius:7px;
+    flex:1;
+    min-width:180px;
+}
+.map {
+    min-height:300px;
+    background:#d7e9e7;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    border:2px dashed #8bb8ad;
+}
+.cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:25px;
+}
+.card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px #00000010;
+}
+button {
+    background:#087e72;
+    color:white;
+    border:0;
+    padding:12px 18px;
+    border-radius:7px;
+    cursor:pointer;
+}
+footer {
+    text-align:center;
+    padding:25px;
+    background:#123b38;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html">← Back to Home</a>
+<h2 style="color:white">🗺️ River Pollution Map</h2>
+</header>
+
+<main>
+<div class="intro">
+<h1>Explore India's River Pollution</h1>
+<p>
+Help document pollution sources and understand
+the condition of rivers across India.
+</p>
+</div>
+
+<h2>Find a River or Location</h2>
+
+<div class="filters">
+<select id="state">
+<option value="">Select State</option>
+<option>Uttar Pradesh</option>
+<option>Gujarat</option>
+<option>Madhya Pradesh</option>
+<option>Delhi</option>
+<option>Bihar</option>
+</select>
+
+<input id="river" placeholder="Enter river name">
+<button onclick="searchRiver()">Search</button>
+</div>
+
+<div class="map">
+<div>
+<h2>🌏 India River Map</h2>
+<p>Interactive verified pollution map will be added here.</p>
+<p>We will add real geographical data in the next stage.</p>
+</div>
+</div>
+
+<h2>Pollution Categories</h2>
+<div class="cards">
+<div class="card">
+<h3>🏭 Industrial Waste</h3>
+<p>Industrial wastewater and chemical discharge.</p>
+</div>
+<div class="card">
+<h3>🚰 Sewage Discharge</h3>
+<p>Untreated domestic sewage entering rivers.</p>
+</div>
+<div class="card">
+<h3>🗑️ Plastic Waste</h3>
+<p>Plastic and solid waste entering water bodies.</p>
+</div>
+<div class="card">
+<h3>🌾 Agricultural Runoff</h3>
+<p>Fertilizers and pesticides reaching rivers.</p>
+</div>
+</div>
+
+<h2>Report Pollution</h2>
+<p>Verified reports will be displayed after a review process.</p>
+<button onclick="alert('Pollution reporting form will be added in the next stage.')">
+Report a Pollution Location
+</button>
+
+</main>
+
+<footer>
+<p>Clean Rivers India 🇮🇳 | Protect Water, Protect Life</p>
+</footer>
+
+<script>
+function searchRiver() {
+let state=document.getElementById("state").value;
+let river=document.getElementById("river").value;
+if(!state && !river) {
+alert("Please select a state or enter a river name.");
+return;
+}
+alert("Search feature will be connected to verified river data in the next stage.");
+}
+</script>
+
+</body>
+</html>
+
