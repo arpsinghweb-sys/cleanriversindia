@@ -1,1 +1,104 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join & Report Pollution | Clean Rivers India</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f8f6;color:#173b35}
+header{background:#087f68;color:white;padding:22px;text-align:center}
+nav{background:#075e50;padding:14px;text-align:center}
+nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
+.container{max-width:850px;margin:30px auto;padding:20px}
+.card{background:white;padding:25px;border-radius:12px;box-shadow:0 3px 12px #0001}
+h2{color:#087f68}
+input,select,textarea{width:100%;padding:12px;margin:8px 0 18px;border:1px solid #bbb;border-radius:6px;font-size:16px}
+textarea{min-height:110px}
+button{background:#087f68;color:white;border:0;padding:13px 22px;border-radius:6px;cursor:pointer;font-size:16px}
+.note{background:#fff4d8;padding:13px;border-radius:7px;font-size:14px;margin-top:18px}
+#message{color:#087f68;font-weight:bold}
+footer{text-align:center;padding:25px;background:#075e50;color:white}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💧 Clean Rivers India</h1>
+<p>Join Us to Protect Our Rivers</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="pollution-map.html">Pollution Map</a>
+<a href="health-education.html">Health & Environment</a>
+<a href="purification-model.html">Purification Model</a>
+<a href="public-reviews.html">Public Reviews</a>
+<a href="share-idea.html">Share Your Idea</a>
+<a href="join-report.html">Join & Report</a>
+</nav>
+
+<div class="container">
+<div class="card">
+<h2>Report River or Water Pollution</h2>
+<p>क्या आपने किसी नदी, नाले, तालाब या जलस्रोत में प्रदूषण देखा है? हमें जानकारी दें ताकि उसकी जाँच की जा सके।</p>
+
+<form id="reportForm">
+<label>Your Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+
+<label>City / Village</label>
+<input type="text" id="location" placeholder="Enter city or village" required>
+
+<label>Water Body Name</label>
+<input type="text" id="waterbody" placeholder="River, drain, lake or pond name" required>
+
+<label>Type of Pollution</label>
+<select id="pollution" required>
+<option value="">Select pollution type</option>
+<option>Household Sewage</option>
+<option>Industrial Waste</option>
+<option>Plastic & Solid Waste</option>
+<option>Dead Fish / Aquatic Life</option>
+<option>Unusual Colour or Smell</option>
+<option>Other / Unknown</option>
+</select>
+
+<label>Describe What You Observed</label>
+<textarea id="description" placeholder="Describe the location and what you observed..." required></textarea>
+
+<label>Photo (Optional)</label>
+<input type="file" id="photo" accept="image/*">
+
+<label>Location Details (Optional)</label>
+<input type="text" id="coordinates" placeholder="Nearby landmark or GPS coordinates">
+
+<button type="submit">Submit Pollution Report</button>
+</form>
+
+<p id="message"></p>
+
+<div class="note">
+<strong>Important:</strong> यह अभी Demo Form है। आपकी रिपोर्ट या फोटो किसी Server या Database में सेव नहीं होगी। रिपोर्ट की पुष्टि और सुरक्षित डेटा व्यवस्था शुरू होने के बाद ही जानकारी सार्वजनिक की जाएगी।
+<br><br>
+कृपया प्रदूषित पानी को न छुएँ, उसमें प्रवेश न करें और खतरनाक जगह पर जाकर फोटो न लें। केवल सुरक्षित दूरी से जानकारी दें।
+</div>
+</div>
+</div>
+
+<footer>
+<p>Clean Rivers India | Protect Water, Protect Life</p>
+</footer>
+
+<script>
+document.getElementById("reportForm").addEventListener("submit",function(event){
+event.preventDefault();
+document.getElementById("message").textContent =
+"Thank you! This is a demo only. Your report and photo have not been saved.";
+});
+</script>
+
+</body>
+</html>
+
