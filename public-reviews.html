@@ -1,1 +1,145 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Reviews | Clean Rivers India</title>
+<style>
+* { box-sizing:border-box; }
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    color:#173b38;
+    background:#f4faf8;
+}
+header {
+    background:#075e54;
+    padding:22px 7%;
+    color:white;
+}
+header a { color:white; text-decoration:none; }
+.hero {
+    background:linear-gradient(135deg,#075e54,#168f83);
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+main { padding:35px 7%; max-width:1100px; margin:auto; }
+h2 { color:#087e72; }
+.panel {
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin:25px 0;
+    box-shadow:0 2px 12px #00000010;
+}
+input, textarea {
+    width:100%;
+    padding:13px;
+    margin:9px 0;
+    border:1px solid #bbb;
+    border-radius:7px;
+    font:inherit;
+}
+textarea { min-height:110px; }
+button {
+    background:#087e72;
+    color:white;
+    padding:12px 20px;
+    border:0;
+    border-radius:7px;
+    cursor:pointer;
+}
+.notice {
+    background:#fff3d5;
+    padding:15px;
+    border-radius:8px;
+    line-height:1.6;
+}
+footer {
+    background:#123b38;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<a href="index.html">← Back to Home</a>
+<h2 style="color:white">💬 Public Reviews & Suggestions</h2>
+</header>
+
+<div class="hero">
+<h1>Your Voice Can Help Save Rivers</h1>
+<p>Share your experiences, ideas and suggestions for river protection.</p>
+</div>
+
+<main>
+
+<div class="notice">
+<strong>Important:</strong> This is an early demonstration.
+Comments submitted here are not yet stored or publicly visible.
+A secure submission system with moderation will be connected later.
+</div>
+
+<div class="panel">
+<h2>Share Your Feedback</h2>
+
+<form id="reviewForm">
+<label>Your Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+
+<label>Your State or City</label>
+<input type="text" id="location" placeholder="Enter your city or state" required>
+
+<label>Your Review or Suggestion</label>
+<textarea id="review" placeholder="Write your thoughts about river protection..." required></textarea>
+
+<button type="submit">Submit Review</button>
+</form>
+
+<p id="message"></p>
+</div>
+
+<div class="panel">
+<h2>What Can You Share?</h2>
+<ul>
+<li>Your local river's condition.</li>
+<li>Ideas for reducing water pollution.</li>
+<li>Experiences from river-cleaning activities.</li>
+<li>Suggestions for government and communities.</li>
+<li>Ideas for protecting aquatic life.</li>
+</ul>
+</div>
+
+<div class="panel">
+<h2>Community Guidelines</h2>
+<ul>
+<li>Share genuine and respectful information.</li>
+<li>Do not publish personal or private information.</li>
+<li>Avoid false allegations and unverified claims.</li>
+<li>Do not use abusive or threatening language.</li>
+</ul>
+</div>
+
+</main>
+
+<footer>
+<h3>🌊 CLEAN RIVERS INDIA 🇮🇳</h3>
+<p>Every Voice Matters. Every River Matters.</p>
+</footer>
+
+<script>
+document.getElementById("reviewForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("message").textContent =
+    "Thank you! This is a demo only. Your review has not been saved.";
+});
+</script>
+
+</body>
+</html>
+
