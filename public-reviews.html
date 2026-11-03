@@ -65,6 +65,94 @@ footer {
 }
 </style>
 </head>
+    
+<style>
+#monkeyGuideButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    border: none;
+    border-radius: 50px;
+    padding: 13px 18px;
+    background: #087f68;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px #0003;
+}
+#monkeyGuideBox {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    z-index: 9999;
+    width: 280px;
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px #0003;
+    line-height: 1.6;
+}
+#monkeyGuideBox button {
+    background: #087f68;
+    color: white;
+    border: none;
+    padding: 9px 13px;
+    margin: 5px 4px 0 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+</style>
+
+<button id="monkeyGuideButton" onclick="toggleMonkeyGuide()">
+    🐵 Monkey Guide
+</button>
+
+<div id="monkeyGuideBox">
+    <h3>🐵 नमस्ते दोस्त!</h3>
+    <p>
+        इस पेज पर आप Clean Rivers India के बारे में
+        अपनी राय और सुझाव दे सकते हैं। कृपया सम्मानजनक
+        भाषा का उपयोग करें और नदी की सफाई से जुड़े
+        अपने अनुभव साझा करें। अभी यह Demo Form है,
+        इसलिए आपकी राय सेव नहीं होगी।
+    </p>
+    <button onclick="speakMonkeyGuide()">🔊 मुझे सुनाओ</button>
+    <button onclick="stopMonkeyGuide()">रोकें</button>
+    <button onclick="toggleMonkeyGuide()">बंद करें</button>
+</div>
+
+<script>
+function toggleMonkeyGuide() {
+    const box = document.getElementById("monkeyGuideBox");
+    box.style.display =
+        box.style.display === "block" ? "none" : "block";
+}
+
+function speakMonkeyGuide() {
+    if (!("speechSynthesis" in window)) {
+        alert("आपका Browser आवाज़ चलाने की सुविधा नहीं देता।");
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const message =
+        "नमस्ते दोस्त! इस पेज पर आप Clean Rivers India के बारे में अपनी राय और सुझाव दे सकते हैं। कृपया सम्मानजनक भाषा का उपयोग करें और नदी की सफाई से जुड़े अपने अनुभव साझा करें। अभी यह डेमो फॉर्म है, इसलिए आपकी राय सेव नहीं होगी।";
+
+    const speech = new SpeechSynthesisUtterance(message);
+    speech.lang = "hi-IN";
+    speech.rate = 0.9;
+
+    window.speechSynthesis.speak(speech);
+}
+
+function stopMonkeyGuide() {
+    window.speechSynthesis.cancel();
+}
+</script>
+
 <body>
 
 <header>
