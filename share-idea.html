@@ -1,1 +1,93 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share Your Idea | Clean Rivers India</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f8f6;color:#173b35}
+header{background:#087f68;color:white;padding:22px;text-align:center}
+nav{background:#075e50;padding:14px;text-align:center}
+nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
+.container{max-width:850px;margin:30px auto;padding:20px}
+.card{background:white;padding:25px;border-radius:12px;box-shadow:0 3px 12px #0001}
+h2{color:#087f68}
+input,select,textarea{width:100%;padding:12px;margin:8px 0 18px;border:1px solid #bbb;border-radius:6px;font-size:16px}
+textarea{min-height:130px}
+button{background:#087f68;color:white;border:0;padding:13px 22px;border-radius:6px;cursor:pointer;font-size:16px}
+button:hover{background:#075e50}
+.note{background:#fff4d8;padding:13px;border-radius:7px;font-size:14px}
+#message{margin-top:15px;color:#087f68;font-weight:bold}
+footer{text-align:center;padding:25px;background:#075e50;color:white}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💧 Clean Rivers India</h1>
+<p>Your Idea Can Help Save Our Rivers</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="pollution-map.html">Pollution Map</a>
+<a href="health-education.html">Health & Environment</a>
+<a href="purification-model.html">Purification Model</a>
+<a href="public-reviews.html">Public Reviews</a>
+<a href="share-idea.html">Share Your Idea</a>
+</nav>
+
+<div class="container">
+<div class="card">
+<h2>Share Your Idea With India</h2>
+<p>क्या आपके पास नदियों को साफ करने, प्रदूषण रोकने या पानी बचाने का कोई अच्छा सुझाव है? हमें बताइए।</p>
+
+<form id="ideaForm">
+<label>Your Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+
+<label>Your City / Village</label>
+<input type="text" id="location" placeholder="Enter your city or village" required>
+
+<label>Idea Category</label>
+<select id="category" required>
+<option value="">Select a category</option>
+<option>River Cleaning</option>
+<option>Water Purification</option>
+<option>Stop Plastic Pollution</option>
+<option>Public Awareness</option>
+<option>Technology & Innovation</option>
+<option>Other</option>
+</select>
+
+<label>Your Idea</label>
+<textarea id="idea" placeholder="Explain your idea in simple words..." required></textarea>
+
+<button type="submit">Submit My Idea</button>
+</form>
+
+<p id="message"></p>
+
+<div class="note">
+<strong>Important:</strong> यह अभी Demo Form है। आपका सुझाव इस समय किसी Database में सेव नहीं होगा। वास्तविक सुझाव जमा करने की सुविधा सुरक्षित व्यवस्था तैयार होने के बाद शुरू होगी।
+</div>
+</div>
+</div>
+
+<footer>
+<p>Clean Rivers India | Together for Clean Water</p>
+</footer>
+
+<script>
+document.getElementById("ideaForm").addEventListener("submit",function(event){
+event.preventDefault();
+document.getElementById("message").textContent =
+"Thank you! This is a demo. Your idea has not been saved.";
+});
+</script>
+
+</body>
+</html>
+
