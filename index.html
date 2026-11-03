@@ -267,6 +267,21 @@ function toggleMenu() {
 }
 </script>
 
+    <script>
+function toggleMenu() {
+    const menu = document.getElementById("mainNavigation");
+    const button = document.querySelector(".menu-toggle");
+
+    menu.classList.toggle("show");
+
+    const isOpen = menu.classList.contains("show");
+    button.setAttribute("aria-expanded", isOpen);
+}
+</script>
+
+</body>
+</html>
+
 
 </body>
 </html>
